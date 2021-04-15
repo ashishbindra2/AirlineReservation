@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.airline.reservation.dao.UserDao;
+
+import com.airline.reservation.entities.Message;
 import com.airline.reservation.entities.User;
 import com.airline.reservation.helper.ConnectionProvider;
 
@@ -27,11 +29,15 @@ public class LoginServlet extends HttpServlet {
 		String userPassword = request.getParameter("password");
 		UserDao dao = new UserDao(ConnectionProvider.getConnection());
 		User user = dao.getUserByEmailAndPassword(userName, userPassword);
-		
+	
 		if(user == null) {
 			//login......
 			//error
-			out.println("Invalid Details.....try again!");
+			/* out.println("Invalid Details.....try again!"); */
+			Message msg = new Message("Invalid Details..!!","erroe"," alert-danger"); 
+			HttpSession s = request.getSession();
+			s.setAttribute("msg", msg);
+			response.sendRedirect("login.jsp");
 		}else {
 			// login success
 			HttpSession s = request.getSession();

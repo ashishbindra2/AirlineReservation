@@ -1,7 +1,6 @@
 package com.airline.reservation.dao;
 
 import java.sql.*;
-
 import com.airline.reservation.entities.User;
 
 public class UserDao {
@@ -62,6 +61,7 @@ public User getUserByEmailAndPassword(String email,String password) {
     user.setFname(fname);
     user.setLname(lname);
     user.setId(set.getInt("iduser"));
+    user.setEmail(set.getString("email"));    
     user.setPassword(set.getString("password"));
     user.setCountryCode(set.getString("country_code"));
     user.setTitle(set.getString("title"));
@@ -75,5 +75,31 @@ public User getUserByEmailAndPassword(String email,String password) {
 		e.printStackTrace();
 	}
 	return user;
+}
+
+public boolean updateUser(User user) {
+	boolean f =false;
+	try{
+		String query = "UPDATE user SET first_name = ?,last_name = ?,email = ?,password=?,country_code=?,title=?,date_of_birth=?,mobile=?,"
+				+ "gender=?,country=? WHERE iduser=?";
+		PreparedStatement p = con.prepareStatement(query);
+		p.setString(1, user.getFname());
+		p.setString(2, user.getLname());
+		p.setString(3, user.getEmail());
+		p.setString(4, user.getPassword());
+		p.setString(5, user.getCountryCode());
+		p.setString(6, user.getTitle());
+		p.setString(7, user.getDateOfBirth());
+		p.setLong(8, user.getMobile());
+		p.setString(9, user.getGender());
+		p.setString(10, user.getCountry());
+		p.setInt(11, user.getId());
+    
+		 p.executeUpdate();
+		 f= true;
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return f;
 }
 }

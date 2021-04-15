@@ -1,5 +1,7 @@
+ <%@page import = "com.airline.reservation.entities.Message" %>
+ 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +16,27 @@
 </head>
 <body>
 <%@ include file = "NavBar.jsp" %>
+
+
+
 <main class="container-fluid p-0 mt-5 back ">
 <div class="loginBox">
 		<img class="user"  src="./img/2.jpg" alt="avatar" width="100px">
 		<h3>Sign In Here </h3>
+		
+<%  
+Message m =  (Message)session.getAttribute("msg");
+		if(m!= null){ 
+ %>
+			
+			<div class="alert <%= m.getCssClass() %>" role="alert">
+        <%= m.getContent() %>
+            </div>
+		<%
+		session.removeAttribute("mes");
+		}
+		
+		%>
 		<form action="LoginServlet" method="post">
 			<div class="inputBox">
 				<input type="text" placeholder="Username or email" name="email" required>
