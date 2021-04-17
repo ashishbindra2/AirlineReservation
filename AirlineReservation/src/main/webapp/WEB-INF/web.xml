@@ -17,4 +17,13 @@
   	<servlet-name>logot</servlet-name>
   	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
+
+<!--     <servlet>
+  	<servlet-name>search</servlet-name>
+  	<servlet-class>com.airline.reservation.servlets.SearchFlightServle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>search</servlet-name>
+  	<url-pattern>/SearchFlightServlet</url-pattern>
+  </servlet-mapping> -->
 </web-app>

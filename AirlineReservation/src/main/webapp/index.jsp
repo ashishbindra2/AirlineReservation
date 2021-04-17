@@ -23,7 +23,11 @@
    background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}</style>
+}
+.form-control:valid {
+  background-color:  #ebecee!important;
+} 
+</style>
 </head>
 <body>
 <%@ include file = "NavBar.jsp" %>
@@ -44,13 +48,12 @@
 					</div>
 					<div class="col-md-5 col-md-pull-7">
 						<div class="booking-form">
-							<form>
-
+							<form method = "post" action="TestServlet" >
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Flying From</span>
-											<input class="form-control" type="text" placeholder="Flying From">
+											<input class="form-control" name="fromCity" type="text" placeholder="Flying From" required>
 										</div>
 
 									</div>
@@ -58,26 +61,24 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Flying To</span>
-											<input class="form-control" type="text" placeholder="Flying To">
+											<input class="form-control" name="toCity"  type="text" placeholder="Flying To" required>
 										</div>
 
 									</div>
-
-
 								</div>
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Departing</span>
-											<input class="form-control" type="date" required>
+											<input class="form-control" name="date" type="date" required>
 										</div>
 									</div>
-									<div class="col-sm-6">
+									<!-- <div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Returning</span>
 											<input class="form-control" type="date" required>
 										</div>
-									</div>
+									</div> -->
 								</div>
 								<div class="form-group">
 									<span class="form-label">Your Destination</span>
@@ -90,10 +91,10 @@
 									<div class="col-sm-4">
 										<div class="form-group">
 											<span class="form-label">Adults</span>
-											<select class="form-control">
-												<option>1</option>
-												<option>2</option>
-												<option>3</option>
+											<select class="form-select form-control">
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
 											</select>
 											<span class="select-arrow"></span>
 										</div>
@@ -112,7 +113,7 @@
 									<div class="col-sm-4">
 										<div class="form-group">
 											<span class="form-label">Travel Class</span>
-											<select class="form-control">
+											<select class="form-select form-control">
 												<option>Economy Class</option>
 												<option>Business Class</option>
 												<option>First Class</option>
@@ -122,7 +123,7 @@
 									</div>
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn">Check availability</button>
+								<input type="submit" class="submit-btn"  value="Check availability">
 								</div>
 							</form>
 						</div>
