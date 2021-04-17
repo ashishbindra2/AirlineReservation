@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.airline.reservation.dao.UserDao;
+import com.airline.reservation.entities.Message;
 import com.airline.reservation.entities.User;
 import com.airline.reservation.helper.ConnectionProvider;
 
@@ -48,10 +49,16 @@ public class EditServlet extends HttpServlet {
 		boolean ans = userDao.updateUser(user);
 		
 		if(ans) {
-			out.println("updated!!");
+			Message msg = new Message("Profile update..!!","Success"," alert-success"); 
+			HttpSession sm = request.getSession();
+			sm.setAttribute("msg", msg);
 		}else {
-			out.println("erroe");
+			Message msg = new Message("Invalid Details..!!","error"," alert-danger"); 
+			HttpSession sm = request.getSession();
+			sm.setAttribute("msg", msg);
 		}
+
+		response.sendRedirect("profile.jsp");
 	}
 
 }

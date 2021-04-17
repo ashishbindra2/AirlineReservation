@@ -1,5 +1,7 @@
 <%@page import="javax.websocket.SendResult"%>
 <%@page import="com.airline.reservation.entities.User"%>
+<%@page import="com.airline.reservation.entities.Message"%>
+
 <%
 response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 User user = (User) session.getAttribute("currentUser");
@@ -35,6 +37,19 @@ if (user == null) {
 	<%@include file="NavBar.jsp"%>
 	<main class="container-fluid p-0 mt-5">
 
+			<%
+			Message m = (Message) session.getAttribute("msg");
+			if (m != null) {
+			%>
+
+
+			<div class="alert <%=m.getCssClass()%>" role="alert">
+				<%=m.getContent()%>
+			</div>
+			<%
+			session.removeAttribute("msg");
+			}
+			%>
 		<!-- Modal -->
 		<div class="modal fade" id="profile-modal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -35,12 +35,8 @@
 				<div class="row">
 					<div class="col-md-7 col-sm-10 col-md-push-5">
 						<div class="booking-cta">
-							<h1>Make your reservation</h1>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam
-								consectetur molestias itaque
-								ad sint fugit architecto incidunt iste culpa perspiciatis possimus voluptates aliquid
-								consequuntur cumque quasi.
-								Perspiciatis.
+							<h1>Travel safely with us</h1>
+							<p>As one of the largest and most experienced global airlines throughout the COVID-19 crisis, you can rely on us to take you on your next journey safely.
 							</p>
 						</div>
 						<a href="login.jsp" class="btn btn-outline-light btn-lg"><span

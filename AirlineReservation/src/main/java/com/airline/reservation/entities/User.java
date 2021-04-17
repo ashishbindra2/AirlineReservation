@@ -1,7 +1,5 @@
 package com.airline.reservation.entities;
 
-import java.sql.*;
-
 public class User {
 
 private int id;
@@ -15,11 +13,18 @@ private String lname;
 private String  dateOfBirth;
 private String gender;
 private String  country;
-private Timestamp dateTime;
+
+
+
+public User(String fname, String lname) {
+	super();
+	this.fname = fname;
+	this.lname = lname;
+}
 
 // constructor 
 public User(int id, String email, String password, String countryCode, long mobile, String title, String fname,
-		String lname, String dateOfBirth, String gender, String country, Timestamp dateTime) {
+		String lname, String dateOfBirth, String gender, String country) {
 	super();
 	this.id = id;
 	this.email = email;
@@ -32,7 +37,6 @@ public User(int id, String email, String password, String countryCode, long mobi
 	this.dateOfBirth = dateOfBirth;
 	this.gender = gender;
 	this.country = country;
-	this.dateTime = dateTime;
 }
 
 public User() {}
@@ -142,13 +146,6 @@ public void setCountry(String country) {
 	this.country = country;
 }
 
-public Timestamp getDateTime() {
-	return dateTime;
-}
-
-public void setDateTime(Timestamp dateTime) {
-	this.dateTime = dateTime;
-}
 
 
 

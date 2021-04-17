@@ -34,12 +34,13 @@ public class LoginServlet extends HttpServlet {
 			//login......
 			//error
 			/* out.println("Invalid Details.....try again!"); */
-			Message msg = new Message("Invalid Details..!!","erroe"," alert-danger"); 
+			Message msg = new Message("Invalid Details..!!","error"," alert-danger"); 
 			HttpSession s = request.getSession();
 			s.setAttribute("msg", msg);
 			response.sendRedirect("login.jsp");
 		}else {
 			// login success
+			Message msg = new Message("success ..logi!!","success"," alert-success"); 
 			HttpSession s = request.getSession();
 			s.setAttribute("currentUser", user);
 			response.sendRedirect("profile.jsp");

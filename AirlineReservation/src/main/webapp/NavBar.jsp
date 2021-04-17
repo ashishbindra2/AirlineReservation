@@ -27,8 +27,11 @@ nav div a img{
         <li class="nav-item">
           <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Flight</a>
         </li>
+           <li class="nav-item">
+          <a class="nav-link " href="./adminLogin.jsp" tabindex="-1" aria-disabled="true">Admin</a>
+        </li>
           
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -38,7 +41,7 @@ nav div a img{
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
         </li>

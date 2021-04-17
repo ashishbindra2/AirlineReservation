@@ -18,6 +18,11 @@ import com.airline.reservation.helper.ConnectionProvider;
 @WebServlet("/AdminLoginServlet")
 public class AdminLoginServlet extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 PrintWriter out = response.getWriter();
 
@@ -26,16 +31,16 @@ public class AdminLoginServlet extends HttpServlet {
 			
 			AdminDao adao = new AdminDao(ConnectionProvider.getConnection());
 			Admin admin = adao.getUserByEmailAndPassword(userName, userPassword);
-		    if(admin!=null){
-				HttpSession s = request.getSession();
-				s.setAttribute("currentAdmin", admin);
-				response.sendRedirect("./admin/index.jsp");
+		    if(admin==null){
+			Message ms = new Message("Invalid Details..!!","erroe"," alert-danger"); 
+				HttpSession ad = request.getSession();
+				ad.setAttribute("adminlogin", ms);
+				response.sendRedirect("adminLogin.jsp");
 			}else {
-				Message msg = new Message("Invalid Details..!!","erroe"," alert-danger"); 
-				HttpSession s = request.getSession();
-				s.setAttribute("adminlogin", msg);
-				response.sendRedirect("login.jsp");
-			}
+				HttpSession ad = request.getSession();
+			ad.setAttribute("currentAdmin", admin);
+			response.sendRedirect("./admin/index.jsp");
+			}	
 	}
 
 }

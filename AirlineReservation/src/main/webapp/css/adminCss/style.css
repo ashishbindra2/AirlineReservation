@@ -38,6 +38,7 @@ body {
 .navigation ul {
   position: absolute;
   top: 0;
+  padding-left: 0rem!important;
   left: 0px;
   width: 100%;
 }
