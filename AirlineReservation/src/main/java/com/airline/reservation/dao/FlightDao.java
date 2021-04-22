@@ -163,4 +163,34 @@ public class FlightDao {
 		}
 		return list;
 	}
+//	fetch all the fligth
+	public List<Flight> getFlightById(int id) {
+		List<Flight> list = new ArrayList<>();
+		// fetch the flight
+		try {
+			PreparedStatement p = con.prepareStatement("SELECT * FROM flight WHERE idflight =?");
+			p.setInt(1, id);
+			ResultSet set = p.executeQuery();
+			while (set.next()) {
+				int fid = set.getInt("idflight");
+				String flightName = set.getString("flight_name");
+				String flightNo = set.getString("flight_no");
+				String fromCity = set.getString("from_city");
+				String toCity = set.getString("to_city");
+				String flightDate = set.getString("flight_date");
+				String flightTime = set.getString("flight_time");
+				String travelDuration = set.getString("travel_duration");
+				String airplaneName = set.getString("airplane_name");
+				String ticketPrice = set.getString("ticket_price");
+				String description = set.getString("discription");
+
+				Flight c = new Flight(fid, flightName, flightNo, fromCity, toCity, flightDate, flightTime,
+						travelDuration, airplaneName, ticketPrice, description);
+				list.add(c);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

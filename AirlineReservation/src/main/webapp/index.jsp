@@ -48,7 +48,7 @@
 					</div>
 					<div class="col-md-5 col-md-pull-7">
 						<div class="booking-form">
-							<form method = "post" action="TestServlet" >
+							<form method = "post" action="SerachFlightServlet" >
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
