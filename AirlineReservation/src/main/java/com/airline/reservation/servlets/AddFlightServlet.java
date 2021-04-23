@@ -50,20 +50,6 @@ public class AddFlightServlet extends HttpServlet {
 			out.println("error not insert!!");
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

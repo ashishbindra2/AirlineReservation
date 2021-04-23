@@ -34,7 +34,8 @@
 		<div class="pt-5 mb-3">
 			<h5>Best flights</h5>
 			<p class="">Total price includes taxes + fees for 1 adult.
-				Additional bag fees and other fees may apply.</p>
+				Additional bag fees and other fees may apply.</p>									
+				
 		</div>
 		<div class="container">
 			<div class="accordion accordion-flush" id="accordionFlushExample">
@@ -48,7 +49,7 @@
 
 				<div class="accordion-item border rounded ">
 					<h2 class="accordion-header" id="flush-headingOne">
-						<button class="accordion-button collapsed" type="button"
+						<button class="accordion-button collapsed border border-info" type="button"
 							data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
 							aria-expanded="false" aria-controls="flush-collapseOne">
 							<div class="container">

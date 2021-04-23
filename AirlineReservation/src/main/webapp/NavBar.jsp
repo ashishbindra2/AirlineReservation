@@ -25,7 +25,7 @@ nav div a img{
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Flight</a>
+          <a class="nav-link " href="listOfFlight.jsp" tabindex="-1" aria-disabled="true">Flight</a>
         </li>
            <li class="nav-item">
           <a class="nav-link " href="./adminLogin.jsp" tabindex="-1" aria-disabled="true">Admin</a>
