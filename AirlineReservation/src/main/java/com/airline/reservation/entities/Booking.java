@@ -7,6 +7,7 @@ private int fid;
 private int gid;
 private String seatNo;
 private int numberOfSeats;
+
 public Booking() {
 	super();
 }

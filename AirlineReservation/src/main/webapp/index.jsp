@@ -44,7 +44,7 @@
 							</p>
 						</div>
 						<a href="login.jsp" class="btn btn-outline-light btn-lg"><span
-								class="fa fa-user-circle fa-spin"></span>Login</a>
+								class="fa fa-user-circle fa-spin"></span> Login</a>
 					</div>
 					<div class="col-md-5 col-md-pull-7">
 						<div class="booking-form">
@@ -55,7 +55,6 @@
 											<span class="form-label">Flying From</span>
 											<input class="form-control" name="fromCity" type="text" placeholder="Flying From" required>
 										</div>
-
 									</div>
 
 									<div class="col-sm-6">
@@ -63,7 +62,6 @@
 											<span class="form-label">Flying To</span>
 											<input class="form-control" name="toCity"  type="text" placeholder="Flying To" required>
 										</div>
-
 									</div>
 								</div>
 								<div class="row">
@@ -73,12 +71,6 @@
 											<input class="form-control" name="date" type="date" required>
 										</div>
 									</div>
-									<!-- <div class="col-sm-6">
-										<div class="form-group">
-											<span class="form-label">Returning</span>
-											<input class="form-control" type="date" required>
-										</div>
-									</div> -->
 								</div>
 								<div class="form-group">
 									<span class="form-label">Your Destination</span>
@@ -87,7 +79,6 @@
 								</div>
 
 								<div class="row">
-
 									<div class="col-sm-4">
 										<div class="form-group">
 											<span class="form-label">Adults</span>

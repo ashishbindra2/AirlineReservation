@@ -207,7 +207,7 @@ grid-template-columns: 1fr;
 				{
 			swal("Registered successfully.. We are going to redirecting to Detail .")
 			.then((value) => {
-				 window.location= "Details.jsp"
+				 window.location= "profile.jsp"
 				});
 				}
 			else{

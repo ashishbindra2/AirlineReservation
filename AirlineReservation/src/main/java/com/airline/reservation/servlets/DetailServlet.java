@@ -46,7 +46,7 @@ public class DetailServlet extends HttpServlet {
 			out.println("Done");
 			HttpSession s = request.getSession();
 			s.setAttribute("currentBooking", booked);
-			response.sendRedirect("admin/viewFlight.jsp");
+			response.sendRedirect("payment.jsp?fid="+fid);
 		
 		}else {
 			out.println("error not insert!!");

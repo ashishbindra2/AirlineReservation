@@ -42,6 +42,8 @@ public class PaymentServlet extends HttpServlet {
 			HttpSession s = request.getSession();
 			s.setAttribute("currentpay", pay);
 
+			response.sendRedirect("profile.jsp");
+
 		} else {
 			out.println("error not insert!!");
 		}

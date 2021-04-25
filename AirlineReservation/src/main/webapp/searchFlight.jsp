@@ -1,24 +1,20 @@
-<%-- <%@page import="com.airline.reservation.helper.ConnectionProvider"%>
-<%-- <%@page import="javax.websocket.SendResult"%>
-<%@page import="java.util.ArrayList"%> --%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.*"%>
-
-<%-- <%@page import="com.airline.reservation.dao.AdminDao"%> --%>
 <%@page import="com.airline.reservation.entities.Flight"%>
 <%@page import="com.airline.reservation.dao.FlightDao"%>
 <%@page import="com.airline.reservation.entities.Admin"%>
 <%@page import="com.airline.reservation.entities.Message"%>
 <%@page import="com.airline.reservation.helper.ConnectionProvider"%>
+
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Result</title>
+<title>Searched Flight</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -86,20 +82,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-				<%-- 	<th scope="row"><%=flight.getFid()%></th>
-			<td><%=flight.getFlightName()%></td>
-			<td><%=flight.getFlightNo()%></td>
-			<td id="flight-row"></td>
-			<td id="flight-row"></td>
-			<td id="flight-row"><%=flight.getFlightDate()%></td>
-			<td id="flight-row"><%=flight.getFlightTime()%></td>
-			<td id="flight-row"><%=flight.getTravelDuration()%></td>
-			<td id="flight-row"><%=flight.getAirplaneName()%></td>
-			<td id="flight-row"><%=flight.getTicketPrice()%></td>
-				<td id="flight-row"><%=flight.getDescription()%></td> --%>
 				<%
 				}
 				%>
@@ -110,7 +92,7 @@
 					<h5 class="card-title">Information you should know</h5>
 					<p class="card-text">            
 					<ul>15 KG per passenger Check-in Baggage included for your selected flight on the sector</ul> 
-                   <ul> Airline Cancellation Fee is Rs. 3500 per passenger for your selected flight on the sector Delhi to Goa</ul> 
+                   <ul> Airline Cancellation Fee is $. 300 per passenger for your selected flight on the sector </ul> 
                    <ul> Certify your health status through the Aarogya Setu app or the self-declaration .</ul> 
                    <ul> Remember to web check-in before arriving at the airport.</ul> 
                    <ul> Face masks are compulsory.</ul> 
