@@ -35,7 +35,7 @@ if (user == null) {
 	<div class="container">
 		<div class="py-5 text-center">
 			<img class="d-block mx-auto mb-4"
-				src="./img/airplane/kevin-unsplash.jpg" alt="" width="100%"
+				src="./img/airplane/l.jpg" alt="" width="100%"
 				height="340px">
 			<h2>Passenger Details</h2>
 			<p class="lead">Please enter all passenger names as they appear
@@ -109,7 +109,7 @@ if (user == null) {
 					<div class="mb-3">
 						<label for="email">Email<!--  <span class="text-muted">(Optional)</span> --></label>
 						<input type="email" class="form-control" id="email" name="email"
-							placeholder="you@example.com">
+							placeholder="you@example.com" required>
 						<div class="invalid-feedback">Please enter a valid email
 							address for shipping updates.</div>
 					</div>
