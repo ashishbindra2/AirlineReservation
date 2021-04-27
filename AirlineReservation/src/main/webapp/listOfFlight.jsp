@@ -6,12 +6,12 @@
 <%@page import="com.airline.reservation.entities.Message"%>
 <%@page import="com.airline.reservation.helper.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>List Of Flight</title>
 </head>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
@@ -21,6 +21,14 @@
 <link rel="icon" href="./img/favicon-16x16.png" type="image/gif"
 	sizes="16x16">
 <link rel="stylesheet" href="./css/style.css">
+<style>
+body {
+	background-image: url(img/airplane/virgin.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+</style>
 </head>
 <body>
 	<%@ include file="NavBar.jsp"%>
@@ -28,8 +36,8 @@
 		<div class="pt-5 mb-3">
 			<h5>Best flights</h5>
 			<p class="">Total price includes taxes + fees for 1 adult.
-				Additional bag fees and other fees may apply.</p>									
-				
+				Additional bag fees and other fees may apply.</p>
+
 		</div>
 		<div class="container">
 			<div class="accordion accordion-flush" id="accordionFlushExample">
@@ -41,18 +49,22 @@
 
 				<div class="accordion-item border rounded mb-1">
 					<h2 class="accordion-header" id="flush-headingOne">
-						<button class="accordion-button collapsed border border-info" type="button"
-							data-bs-toggle="collapse" data-bs-target="#s<%=flight.getFid()%>"
-							aria-expanded="false" aria-controls="s<%=flight.getFid()%>">
+						<button class="accordion-button collapsed border border-info"
+							type="button" data-bs-toggle="collapse"
+							data-bs-target="#s<%=flight.getFid()%>" aria-expanded="false"
+							aria-controls="s<%=flight.getFid()%>">
 							<div class="container">
 								<div class="row">
 									<i class="fas fa-plane-departure"></i>
-									<div class="col-sm"><%=flight.getAirplaneName()%></div>
+									<div class="col-sm"><%=flight.getAirplaneName()%>
+									</div>
 									<div class="col-sm"><%=flight.getFlightTime()%></div>
 									<div class="col-sm"><%=flight.getTravelDuration()%>
 										<div class=" text-wrap fs-6"><%=flight.getFromCity()%>--<%=flight.getToCity()%></div>
 									</div>
-									<div class="col-sm">available</div>
+									<div class="col-sm">
+										<span class="badge rounded-pill bg-success">available</span>
+									</div>
 									<div class="col-sm">
 										$
 										<%=flight.getTicketPrice()%>
@@ -67,12 +79,15 @@
 						data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">
 							<div class="row">
-								<div class="col text-center"><%=flight.getFromCity()%>
+								<div class="col">
+									<small class="text-end text-wrap"><%=flight.getFlightNo()%></small>
+								</div>
+								<div class="col   form-control-sm"><%=flight.getFromCity()%>
 									------>
 									<%=flight.getToCity()%></div>
 								<div class="d-grid gap-2 col-6 mx-auto">
 									<button type="button" onclick="booking(<%=flight.getFid()%>)"
-										class="btn btn-primary ">Select</button>
+										class="btn btn-primary   btn-sm">Select</button>
 								</div>
 							</div>
 						</div>
@@ -82,7 +97,7 @@
 				}
 				%>
 			</div>
-		
+
 		</div>
 	</main>
 	<script async

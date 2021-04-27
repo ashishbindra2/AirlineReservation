@@ -183,10 +183,10 @@ if (user == null) {
 							aria-current="page" href="profile.jsp"> <span data-feather="home"></span>
 								Dashboard 
 						</a></li>
-					<!-- 	<li class="nav-item"><a class="nav-link text-white" href="#">
-								<span data-feather="file"></span> List of Orders
+					 	<li class="nav-item"><a class="nav-link text-white" href="listOfFlight.jsp">
+								<span data-feather="file"></span> Flight
 						</a></li>
-						<li class="nav-item"><a class="nav-link text-white" href="#">
+					<!--	<li class="nav-item"><a class="nav-link text-white" href="#">
 								<span data-feather="shopping-cart"></span> Products
 					</a>
 					</li> -->

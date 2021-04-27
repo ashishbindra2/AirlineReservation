@@ -30,8 +30,8 @@
 		<div class="pt-5 mb-3">
 			<h5>Best flights</h5>
 			<p class="">Total price includes taxes + fees for 1 adult.
-				Additional bag fees and other fees may apply.</p>									
-				
+				Additional bag fees and other fees may apply.</p>
+
 		</div>
 		<div class="container">
 			<div class="accordion accordion-flush" id="accordionFlushExample">
@@ -40,14 +40,25 @@
 				String from_city = request.getParameter("city");
 				String to_city = request.getParameter("to");
 				List<Flight> list = fd.serachFlights(from_city, to_city);
+				if (list.isEmpty()) {
+				%>
+				<div class="accordion-item border rounded ">
+					<h2 class="accordion-header text-center" id="flush-headingOne">
+						<span class="badge  bg-danger ">Flight Not available </span><span
+							class="badge bg-light text-dark"> * Please search different
+							location or date</span>
+					</h2>
+				</div>
+				<%
+				} else {
 				for (Flight flight : list) {
 				%>
-
 				<div class="accordion-item border rounded ">
 					<h2 class="accordion-header" id="flush-headingOne">
-						<button class="accordion-button collapsed border border-info" type="button"
-							data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-							aria-expanded="false" aria-controls="flush-collapseOne">
+						<button class="accordion-button collapsed border border-info"
+							type="button" data-bs-toggle="collapse"
+							data-bs-target="#flush-collapseOne" aria-expanded="false"
+							aria-controls="flush-collapseOne">
 							<div class="container">
 								<div class="row">
 									<i class="fas fa-plane-departure"></i>
@@ -90,16 +101,28 @@
 				<div class="card-header">Good to Know</div>
 				<div class="card-body">
 					<h5 class="card-title">Information you should know</h5>
-					<p class="card-text">            
-					<ul>15 KG per passenger Check-in Baggage included for your selected flight on the sector</ul> 
-                   <ul> Airline Cancellation Fee is $. 300 per passenger for your selected flight on the sector </ul> 
-                   <ul> Certify your health status through the Aarogya Setu app or the self-declaration .</ul> 
-                   <ul> Remember to web check-in before arriving at the airport.</ul> 
-                   <ul> Face masks are compulsory.</ul> 
-                    </p>
+					<p class="card-text">
+					<ul>15 KG per passenger Check-in Baggage included for your
+						selected flight on the sector
+					</ul>
+					<ul>Airline Cancellation Fee is $. 300 per passenger for your
+						selected flight on the sector
+					</ul>
+					<ul>Certify your health status through the Aarogya Setu app or
+						the self-declaration .
+					</ul>
+					<ul>Remember to web check-in before arriving at the airport.
+					</ul>
+					<ul>Face masks are compulsory.
+					</ul>
+					</p>
 				</div>
 			</div>
 		</div>
+
+		<%
+		}
+		%>
 	</main>
 	<script async
 		src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
