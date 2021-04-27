@@ -45,6 +45,7 @@ opacity:.9;
 									if (m != null) {
 									%>
 
+
 									<div class="alert <%=m.getCssClass()%>" role="alert">
 										<%=m.getContent()%>
 									</div>
